@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/licensingdb_dev
+    username: licensing_user_dev
+    password: licensing_pass_dev
+
+example:
+  property: default-value
+  max-connections: 10
