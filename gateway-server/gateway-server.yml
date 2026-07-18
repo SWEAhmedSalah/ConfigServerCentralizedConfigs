@@ -10,6 +10,21 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8070/eureka/
 
+  management:
+    endpoint:
+      gateway:
+        enabled: true
+    endpoints:
+      web:
+        exposure:
+          include: "*"
+
+  logging:
+    level:
+      com.netflix: WARN
+      org.springframework.web: WARN
+      com.optimagrowth: DEBUG
+
 
 spring:
   cloud:
@@ -28,12 +43,3 @@ spring:
             - Path=/license/**
           filters:
             - RewritePath=/license/(?<path>.*), /$\{path}
-
-
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-
